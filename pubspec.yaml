@@ -1,7 +1,7 @@
 name: carousel_3d
 description: A new Flutter package.
-version: 0.0.1
-author: allkissyouz@gmail.com
+version: 0.0.3
+#author: allkiss<allkissyouz@gmail.com>
 homepage: https://github.com/allkiss/carousel_3d
 
 environment:

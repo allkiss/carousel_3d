@@ -14,7 +14,6 @@ class Transformer3D extends PageTransformer {
   @override
   Widget transform(Widget item, TransformInfo info) {
     double position = info.position;
-    print('$position');
     Widget child = item;
     double scaleF = 0;
     if (scale != null) {
@@ -35,19 +34,21 @@ class Transformer3D extends PageTransformer {
       );
     }
 
-    if (position.abs() != 0) {
-      child = ClipRect(
-        clipper: PageCustomClipper((-position * position.abs()) * info.width,
-            info.width * viewportFraction),
-        child: child,
-      );
-    }
+    // if (position.abs() != 0) {
+    //   child = ClipRect(
+    //     clipper: PageCustomClipper((-position * position.abs()) * info.width,
+    //         info.width * viewportFraction),
+    //     child: child,
+    //   );
+    // }
 
     child = Transform.translate(
       offset: Offset((position * position.abs()) * info.width, 0),
       child: child,
     );
-
+    child = ClipRect(
+      child: child,
+    );
     return child;
   }
 }

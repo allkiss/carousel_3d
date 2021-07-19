@@ -68,6 +68,10 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 350,
               child: Carousel3DWidget(
                 autoPlay: false,
+                loop: true,
+                duration: 1000,
+                viewportFraction: 0.6,
+                scale: 0.7,
                 itemBuilder: (BuildContext context, int index) {
                   return Image.asset(
                     imgs[index],
@@ -76,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 itemCount: imgs.length,
               ),
-
             ),
           ],
         ),
